@@ -1,9 +1,10 @@
-module.exports = async function($) {
-  const host = process.env.NODE_ENV == 'production'
-    ? 'https://waveorb.com/api'
-    : 'http://localhost:5000'
+module.exports = async function ($) {
+  const host =
+    process.env.NODE_ENV == 'production'
+      ? 'https://waveorb.com/api'
+      : 'http://localhost:5000'
 
-  return /* html */`
+  return /* html */ `
     <!doctype html>
     <html lang="${$.lang}">
       <head>
@@ -18,12 +19,6 @@ module.exports = async function($) {
         ${process.env.NODE_ENV == 'development' ? $.script('/js/dev.js') : ''}
       </head>
       <body>
-        <header>
-          <nav>
-            <a href="${$.link('index')}">Home</a>
-            <a href="${$.link('about')}">About</a>
-          </nav>
-        </header>
         <script>
           toggleVisibility()
           setActiveLink()
