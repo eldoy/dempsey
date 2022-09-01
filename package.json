@@ -1,0 +1,35 @@
+{
+  "name": "dempsey",
+  "version": "0.1.0",
+  "description": "Jack Dempsey Championship Fighting Book",
+  "scripts": {
+    "dev": "npm run clear:css && npm run build:css && concurrently -n 🔥,💗 \"npm run watch:app\" \"npm run watch:css\"",
+    "watch:app": "WAVEORB_PORT=5666 nodemon -e js,mjs,json,yml,css,md -i dist -x waveorb serve",
+    "watch:css": "sass --watch app/assets/scss/app.scss app/assets/css/build/app.css",
+    "build:css": "sass app/assets/scss/app.scss app/assets/css/build/app.css",
+    "build:css:min": "sass --style compressed --no-source-map app/assets/scss/app.scss app/assets/css/build/app.css",
+    "clear:css": "rm -rf app/assets/css/build",
+    "build": "npm run clear:css && npm run build:css:min && waveorb build",
+    "test": "jest --watch",
+    "generate": "waveorb generate",
+    "migrate": "waveorb migrate",
+    "sitemap": "waveorb sitemap",
+    "ping": "waveorb ping",
+    "update": "waveorb update",
+    "deploy": "waveorb deploy",
+    "serve": "waveorb serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eldoy/dempsey"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.54.2",
+    "waveorb": "^0.30.16"
+  },
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}
