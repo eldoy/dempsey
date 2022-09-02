@@ -30,6 +30,7 @@
     "waveorb": "^0.30.16"
   },
   "devDependencies": {
-    "concurrently": "^7.3.0"
+    "concurrently": "^7.3.0",
+    "extras": "^0.10.6"
   }
 }
